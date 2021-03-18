@@ -59,6 +59,16 @@ pub struct Spawner<F: Fn(&mut World)> {
     /// The spawning function.
     pub f: F,
 }
+/// All summoned units should have this component
+pub struct Summon {
+    /// Entity who sommoned this unit
+    pub owner: Entity
+}
+/// Entity that has summoned another entity 
+pub struct Summoner {
+    /// List of entities summoned by this unit
+    pub summoned: Vec<Entity>
+}
 /// Tags the player.
 pub struct Player;
 
